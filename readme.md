@@ -16,7 +16,7 @@ Loading source files
 
 By default phantom-jasmine will look for a json file in `spec/config.json`. Use this to list all the scripts you want to load before your specs. e.g.
 
-    [ 
+    [
       'lib/jquery.js',
       'app/**/*.js'
 	]
@@ -55,3 +55,4 @@ Options
     --config, -c [file]   Path to config file
     --trace, -t           Show full stack traces
     --defer, -d           Defers execution of tests, requiring a manual call to `jasmine.getEnv().execute();`
+    --cover, -r [path]    Generate istanbul coverage report (requires istanbul instrumented source)

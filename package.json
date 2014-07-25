@@ -14,7 +14,7 @@
     "url": "git@github.com:rlayte/aladdin.git"
   },
   "main": "lib/run_jasmine_test.coffee",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "bin": {
     "aladdin": "./bin/aladdin"
   },
@@ -23,7 +23,8 @@
     "walkdir": "0.0.4",
     "mustache": "0.5.2",
     "commander": "1.0.4",
-    "glob-whatev": "0.1.8"
+    "glob-whatev": "0.1.8",
+    "istanbul": "0.3.0"
   },
   "devDependencies": {},
   "optionalDependencies": {},

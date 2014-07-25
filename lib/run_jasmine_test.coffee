@@ -4,12 +4,16 @@
 # @page is a PhantomJs page object
 # @exit_func is the function to call in order to exit the script
 
+fs = require 'fs'
+
 class PhantomJasmineRunner
   constructor: (@page, @exit_func = phantom.exit) ->
     @tries = 0
     @max_tries = 10
 
   get_status: -> @page.evaluate(-> console_reporter.status)
+
+  get_coverage: -> @page.evaluate(-> console_reporter.coverage)
 
   terminate: ->
     switch @get_status()
@@ -33,6 +37,7 @@ page.onConsoleMessage = (msg) ->
   finished = page.evaluate(-> console_reporter? and console_reporter.finished)
 
   if finished
+    fs.write('client-coverage.json', runner.get_coverage(), 'w')
     runner.terminate()
 
 address = phantom.args[0]
